@@ -30,3 +30,34 @@ Esse componente foi criado para abstrair a construção de tabelas em projetos R
 - Mensagem de estado vazio
 - Tipagem genérica com TypeScript
 - Integração com Chakra UI
+
+---
+
+##Exemplo de uso
+
+import { Button } from "@chakra-ui/react";
+import { TabelaSimples } from "./TabelaSimples";
+
+export default function App() {
+  return (
+    <TabelaSimples
+      colunas={[
+        {
+          titulo: "Matéria",
+          render: ["Matemática", "Português"],
+        },
+        {
+          titulo: "Horário",
+          render: ["15:00", "16:00"],
+        },
+        {
+          titulo: "Ações",
+          render: [
+            <Button size="sm">Editar</Button>,
+            <Button size="sm">Editar</Button>,
+          ],
+        },
+      ]}
+    />
+  );
+}
